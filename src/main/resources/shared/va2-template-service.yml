@@ -1,0 +1,29 @@
+## MULTIPART (MultipartProperties)
+# Enable multipart uploads
+spring:
+    servlet:
+        multipart:
+            enabled: true
+# Threshold after which files are written to disk.
+            file-size-threshold: 2KB
+# Max file size.
+            max-file-size: 200MB
+# Max Request Size
+            max-request-size: 215MB
+
+## File Storage Properties
+# Please change this to the path where you want the uploaded files to be stored.
+file:
+    upload-dir: C:\ClusterStorage\Volume1\Anb\TSMS\uploads
+    report-dir: C:\ClusterStorage\Volume1\Anb\TSMS\reports\
+    
+template:
+    default:
+        remitter: '{"id" : {"clientId" : "","screenId" : "UPCOLREM"},"selectedFields" : "[ 0, 2, 3, 4, 5, 14, 22, 6, 7, 8, 9, 10, 11, 12, 18, 23 ]","templateName" : "default","downldFrmt" : "excel","frequency" : "D","sorting" : "0"}'
+        transaction: '{"id" : {"clientId" : "","screenId" : "UPCOLTRN"},"selectedFields" : "[ 0, 1, 2, 3, 4, 8, 5, 11, 9 ]","templateName" : "default","downldFrmt" : "excel","frequency" : "D","sorting" : "0"}'
+        beneficiary: '{"id" : {"clientId" : "","screenId" : "BENLIST"},"selectedFields" : "[ 0, 1, 2, 3, 4, 8, 5, 11, 9 ]","templateName" : "default","downldFrmt" : "excel","frequency" : "D","sorting" : "0"}'
+        payment: '{"id" : {"clientId" : "","screenId" : "PAYENQ"},"selectedFields" : "[ 0, 1, 2, 3, 4, 8, 5, 11, 9 ]","templateName" : "default","downldFrmt" : "excel","frequency" : "D","sorting" : "0"}'
+        statement: '{"id" : {"clientId" : "","screenId" : "PSTMT"},"selectedFields" : "[ 0, 1, 2, 3, 4, 8, 5, 11, 9 ]","templateName" : "default","downldFrmt" : "excel","frequency" : "D","sorting" : "0"}'
+        si: '{"id" : {"clientId" : "","screenId" : "PCOLINV"},"selectedFields" : "[ 0, 1, 2, 3, 4, 8, 5, 11, 9 ]","templateName" : "default","downldFrmt" : "excel","frequency" : "D","sorting" : "0"}'
+        account: '{"id" : {"clientId" : "","screenId" : "PACCENQ"},"selectedFields" : "[ 0, 2, 3, 4, 5, 14, 22, 6, 7, 8, 9, 10, 11, 12, 18, 23 ]","templateName" : "default","downldFrmt" : "excel","frequency" : "D","sorting" : "0"}'
+ 

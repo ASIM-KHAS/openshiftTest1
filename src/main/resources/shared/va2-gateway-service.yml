@@ -1,0 +1,64 @@
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: va2-auth-service-route
+          uri: lb://va2-auth-service
+          predicates:
+            - Path=/va2-auth-service/**
+        - id: va2-security-service-route
+          uri: lb://va2-security-service
+          predicates:
+            - Path=/va2-security-service/**
+        - id: va2-template-service-route
+          uri: lb://va2-template-service
+          predicates:
+            - Path=/va2-template-service/**
+        - id: va2-pobo-service-route
+          uri: lb://va2-pobo-service
+          predicates:
+            - Path=/va2-pobo-service/**
+        - id: va2-cobo-service-route
+          uri: lb://va2-cobo-service
+          predicates:
+            - Path=/va2-cobo-service/**
+        - id: va2-liquidity-management-service-route
+          uri: lb://va2-liquidity-management-service
+          predicates:
+            - Path=/va2-liquidity-management-service/**
+        - id: va2-commission-service-route
+          uri: lb://va2-commission-service
+          predicates:
+            - Path=/va2-commission-service/**
+        - id: va2-client-inquiry-service-route
+          uri: lb://va2-client-inquiry-service
+          predicates:
+            - Path=/va2-client-inquiry-service/**
+        - id: va2-escrow-service-route
+          uri: lb://va2-escrow-service
+          predicates:
+            - Path=/va2-escrow-service/**
+        - id: va2-signature-service-route
+          uri: lb://va2-signature-service
+          predicates:
+            - Path=/va2-signature-service/**
+        - id: va2-task-service-route
+          uri: lb://va2-task-service
+          predicates:
+            - Path=/va2-task-service/**
+        - id: va2-push-notification-service-route
+          uri: lb://va2-push-notification-service
+          predicates:
+            - Path=/va2-push-notification-service/**
+        - id: va2-notification-service-route
+          uri: lb://va2-notification-service
+          predicates:
+            - Path=/va2-notification-service/**
+        - id: va2-general-escrow-service-route
+          uri: lb://va2-general-escrow-service
+          predicates:
+            - Path=/va2-general-escrow-service/**

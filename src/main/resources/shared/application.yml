@@ -1,0 +1,78 @@
+#This configuration file will hold common configs to be shared among all files
+eureka:
+  instance:
+    prefer-ip-address: false
+#    ip-address: 127.0.0.1
+  client:
+    serviceUrl:
+      defaultZone: http://user1:alfaris1@localhost:8801/eureka/
+
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000         
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000
+        loggerLevel: basic
+spring: 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8180/realms/keycloak
+          jwk-set-uri: http://localhost:8180/realms/keycloak/protocol/openid-connect/certs
+
+jwt:
+  auth:
+    converter:
+      resource-id: keycloak-client
+      principal-attribute: preferred_username 
+        
+#UAT    
+#DATABASE_PASSWORD: +7dQTkLgI8RQtnjk9pmZAQ==
+#DATABASE_USER: CkSazuRZhVw0mK9Pir4HsA==
+#DRIVER_CLASS: oracle.jdbc.driver.OracleDriver
+#DATABASE_URL: jdbc:oracle:thin:@//192.168.90.206:1521/TTSMSDB
+#SECRET: va-8bc934cf-4df7
+
+#PROD
+#DATABASE_PASSWORD: GmuWZ4dzyIOAPRWqrDjCww==
+#DATABASE_USER: gYK0hTTO3kQCytWzNjzbXQ==
+#DRIVER_CLASS: oracle.jdbc.driver.OracleDriver
+#DATABASE_URL: jdbc:oracle:thin:@10.100.165.47:1555/TTSMSDB
+#SECRET: va-8bc934cf-4df7
+
+#DR
+#DATABASE_PASSWORD: GmuWZ4dzyIOAPRWqrDjCww==
+#DATABASE_USER: gYK0hTTO3kQCytWzNjzbXQ==
+#DRIVER_CLASS: oracle.jdbc.driver.OracleDriver
+#DATABASE_URL: jdbc:oracle:thin:@10.103.165.46:1555/TTSMSDB
+#SECRET: va-8bc934cf-4df7
+
+#LOCAL
+#DATABASE_PASSWORD: 2pSDHN9/y+molCaJW1c2Qg==
+#DATABASE_USER: BrzW/FRjClOceLQbdpCsdw==
+#DRIVER_CLASS: oracle.jdbc.driver.OracleDriver
+#DATABASE_URL: jdbc:oracle:thin:@localhost:1521:xe
+#SECRET: va-8bc934cf-4df7
+
+#IL
+keycloak-client-id: keycloak-client
+keycloak-grant-type: password
+
+DATABASE_PASSWORD: u49uvyR3RRh6cQxX69WB/A==
+DATABASE_USER: 6oGT4i9vME/rBZAol/V1qw==
+DRIVER_CLASS: oracle.jdbc.driver.OracleDriver
+DATABASE_URL: jdbc:oracle:thin:@localhost:1521:orcl
+SECRET: va-8bc934cf-4df7

@@ -1,0 +1,6 @@
+PARAMETER:
+   NOTYFY_BENSI: BENSI01
+   SCREEN_ID: DBABENSI
+   NOTYFY_DEP: dep0,dep1,23123
+NOTIFICATION:
+  URL: http://localhost:8820/va2-push-notification-service/socket

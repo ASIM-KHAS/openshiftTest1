@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: va2-config-server
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared #file:E:\Alfaris\FAB\ipshworkspace\shared   #tells spring where to locate the config files
+  profiles:
+    active: native #we are using native because the config server uses a git repo by default
+  security:
+    user:
+      password: alfaris.va@2020 #the password which apps will use to access its configurations
+
+server:
+  servlet:
+    context-path: /va2-config-server
+  port: 9087 #the port where the config-server will be acessible
+
+
